@@ -1,0 +1,1 @@
+# ghost-future-imperfect-template
