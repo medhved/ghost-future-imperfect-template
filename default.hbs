@@ -15,10 +15,11 @@
         <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
     
         {{! Styles'n'Scripts }}
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        
+		<!--[if lte IE 8]><script type="text/javascript" src="{{asset "js/ie/html5shiv.js"}}"></script><![endif]-->
+		<link rel="stylesheet" href="{{asset "css/main.css"}}" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="{{asset "css/ie9.css"}}" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="{{asset "css/ie8.css"}}" /><![endif]-->
     
         {{! Ghost outputs important style and meta data with this tag }}
         {{ghost_head}}
@@ -33,7 +34,7 @@
         <script type="text/javascript" src="{{asset "js/jquery.min.js"}}"></script>
         <script type="text/javascript" src="{{asset "js/skel.min.js"}}"></script>
         <script type="text/javascript" src="{{asset "js/util.js"}}"></script>
-        
+        {{! Ghost outputs important scripts and data with this tag }}
 		{{ghost_foot}}
 		<!--[if lte IE 8]><script type="text/javascript" src="{{asset "js/ie/respond.min.js"}}"></script><![endif]-->
 		<script type="text/javascript" src="{{asset "js/main.js"}}"></script>
