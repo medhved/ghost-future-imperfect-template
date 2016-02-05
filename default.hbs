@@ -23,19 +23,20 @@
         {{! Ghost outputs important style and meta data with this tag }}
         {{ghost_head}}
     </head>
-    <body>
+    <body class="{{body_class}}">
     	<div id="wrapper">
 	    	{{navigation}}
-    		{{body}}
+    		{{{body}}}
     	</div>
     </div>
         <!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/util.js"></script>
+        <script type="text/javascript" src="{{asset "js/jquery.min.js"}}"></script>
+        <script type="text/javascript" src="{{asset "js/skel.min.js"}}"></script>
+        <script type="text/javascript" src="{{asset "js/util.js"}}"></script>
+        
 		{{ghost_foot}}
-		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-		<script src="assets/js/main.js"></script>
+		<!--[if lte IE 8]><script type="text/javascript" src="{{asset "js/ie/respond.min.js"}}"></script><![endif]-->
+		<script type="text/javascript" src="{{asset "js/main.js"}}"></script>
 
     </body>
 </html>
