@@ -1,0 +1,23 @@
+<section id="menu">
+    <!-- Search -->
+	<section>
+		<form class="search" method="get" action="#">
+			<input type="text" name="query" placeholder="Search" />
+		</form>
+	</section>
+	<!-- Links -->
+	<section>
+	    <ul class="links">
+	        {{#foreach navigation}}
+	            <li><a href="{{url absolute="true"}}"><h3>{{label}}</h3></a></li>
+	        {{/foreach}}
+	    </ul>
+	    {{!--<a class=w"subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>--}}
+	</section>
+	<!-- Actions -->
+	<section>
+		<ul class="actions vertical">
+			<li><a href="{{@blog.url}}/rss/" class="button big fit">Subscribe</a></li>
+		</ul>
+	</section>
+</section>
