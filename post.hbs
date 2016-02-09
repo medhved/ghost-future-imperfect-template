@@ -1,24 +1,65 @@
-<article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="#">Magna sed adipiscing</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-11-01">November 1, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
-								</header>
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-								<footer>
-									<ul class="actions">
-										<li><a href="#" class="button big">Continue Reading</a></li>
-									</ul>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
-									</ul>
-								</footer>
-							</article>
+{{!< default}}
+<div id="main">
+	{{#post}}
+		<article class="{{post_class}}">
+			<header>
+				<div class="title">
+					<h2><a href="{{url}}">{{{title}}}</a></h2>
+					{{!--<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>--}}
+				</div>
+				<div class="meta">
+					<time class="published" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>
+					
+					<a href="#" class="author"><span class="name">{{author.name}}</span><img src="{{author.image}}" alt="" /></a>
+					{{!--{{tags prefix=" on "}}--}}
+				</div>
+			</header>
+			{{#if image}}
+			<a href="{{url}}" class="image featured"><img src="{{image}}" alt="" /></a>
+			{{/if}}
+			<div class="post-content">{{content}}</div>
+			<footer>
+				<ul class="actions">
+				    {{#prev_post}}
+					    <li><a href="{{url}}" class="button big">Previous Post</a></li>
+				    {{/prev_post}}
+				    {{#next_post}}
+					    <li><a href="{{url}}" class="button big">Next Post</a></li>
+				    {{/next_post}}
+				</ul>
+				<ul class="stats">
+					{{tags prefix=" on "}}
+					{{!--<li><a href="#">General</a></li>--}}
+					{{!--<li><a href="#" class="icon fa-heart">28</a></li>--}}
+					{{!--<li><a href="#" class="icon fa-comment">128</a></li>--}}
+				</ul>
+			</footer>
+  			<div id="disqus_thread" class="container"></div>
+			<script>
+				/**
+				* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+				* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+				*/
+				/*
+				var disqus_config = function () {
+				this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+				this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				};
+				*/
+				(function() { // DON'T EDIT BELOW THIS LINE
+				var d = document, s = d.createElement('script');
+				
+				s.src = '//blogaraknode.disqus.com/embed.js';
+				
+				s.setAttribute('data-timestamp', +new Date());
+				(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+			
+			
+		</article>
+	{{/post}}
+</div>

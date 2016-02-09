@@ -1,14 +1,22 @@
 <section id="sidebar">
     {{!--Intro--}}
     <section id="intro">
-        {{#if @blog.log}}
+        {{#if @blog.logo}}
             <a class="logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>
         {{/if}}
         <header>
             <h2>{{@blog.title}}</h2>
             <p>{{@blog.description}}</p>
+		<ul class="icons">
+			<li><a href="https://twitter.com/araknode" class="fa-twitter"><span class="label">Twitter</span></a></li>
+			<li><a href="https://facebook.com/araknode" class="fa-facebook"><span class="label">Facebook</span></a></li>
+			{{!--<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>--}}
+			{{!--<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>--}}
+			<li><a href="mailto:info@araknode.com" class="fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
         </header>
     </section>
+    <!-- Footer -->
 	<!-- About -->
 	<section class="blurb">
 		<h2>About</h2>
@@ -17,18 +25,10 @@
 			<li><a href="#" class="button">Learn More</a></li>
 		</ul>
 	</section>
-
-    <!-- Footer -->
 	<section id="footer">
-		<ul class="icons">
-			<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-			<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-			<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-			<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-			<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
-		</ul>
 		<p class="copyright">&copy; Araknode. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
 	</section>
+
 </section>
 
 {{!--<section id="sidebar">--}}
